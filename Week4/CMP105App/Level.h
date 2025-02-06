@@ -7,6 +7,11 @@
 #include <string.h>
 #include <iostream>
 
+#include "Player.h"
+#include "Enemy.h"
+#include "Background.h"
+using namespace sf;
+
 
 class Level : BaseLevel {
 public:
@@ -17,9 +22,15 @@ public:
 	void update(float dt) override;
 	void render() override;
 
+
 private:
 	// Level objects
-	GameObject testSprite;
-	sf::Texture texture;
+	
+
+	View view;// View(Vector2f(300, 300), Vector2f(600, 600));
+	Player player;
+	Background background;
+	Enemy enemy = Enemy();
+	Enemy enemy1 = Enemy(160,540);
 
 };
